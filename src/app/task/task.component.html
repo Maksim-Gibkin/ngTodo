@@ -1,0 +1,12 @@
+<li>
+    <div class="task">
+        <small>{{index + 1}}.</small>
+        <p *ngIf="!isEdit">{{todo.title}}</p>
+    </div>
+    
+    <textarea class="task-input" *ngIf="isEdit" type="text" [(ngModel)]="todo.title" cols="33"></textarea>
+    <button class="btn btn--edit" (click)="isEdit = !isEdit" *ngIf="!isEdit">Изменить</button>
+    <button class="btn btn--save" *ngIf="isEdit" (click)="isEdit = !isEdit">Сохранить</button>
+    <button class="btn btn--del" (click)="removeTask(index)">Удалить</button>
+</li>
+<hr>

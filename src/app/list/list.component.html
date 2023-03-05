@@ -1,0 +1,9 @@
+
+<div class="wrap">
+   <input class="add-input" type="text" [(ngModel)]="text">
+   <button class="btn" (click)="!!text.trim() && addTask()">Добавить</button>
+</div>
+
+<ul class="list">
+   <app-task *ngFor="let todo of todos; let i = index" [todo]="todo" [index]="i"></app-task>
+</ul>
